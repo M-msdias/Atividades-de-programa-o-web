@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #ccffcc; 
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulário:</h2>
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+        <label for="endereco">Endereço:</label>
+        <input type="text" id="endereco" name="endereco"><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone"><br><br>
+        <button type="button" onclick="salvarDados()">Salvar</button>
+        <button type="button" onclick="exibirDados()">Exibir dados salvos</button>
+    </form>
+
+    <h2>Dados Salvos:</h2>
+    <div id="dadossalvos"></div>
+
+    <script>
+        function salvarDados() {
+            var nome = document.getElementById('nome').value;
+            var endereco = document.getElementById('endereco').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+
+            localStorage.setItem('nome', nome);
+            localStorage.setItem('endereco', endereco);
+            localStorage.setItem('email', email);
+            localStorage.setItem('telefone', telefone);
+        }
+
+        function exibirDados() {
+            var nome = localStorage.getItem('nome');
+            var endereco = localStorage.getItem('endereco');
+            var email = localStorage.getItem('email');
+            var telefone = localStorage.getItem('telefone');
+
+            document.getElementById('dadossalvos').innerHTML = 
+                '<p>Nome: ' + nome + '</p>' +
+                '<p>Endereço: ' + endereco + '</p>' +
+                '<p>Email: ' + email + '</p>' +
+                '<p>Telefone: ' + telefone + '</p>';
+        }
+    </script>
+</body>
+</html>
