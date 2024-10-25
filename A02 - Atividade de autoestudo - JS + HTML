@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deseja escrever algo?</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: lightblue;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #0056b3;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deseja escrever algo?</h1>
+    <button onclick="lerExibir()">Clique aqui!</button>
+
+    <script>
+        function lerExibir() {
+            const entrada = window.prompt("Digite algo:");
+            window.alert("Você digitou: " + entrada);
+        }
+    </script>
+</body>
+</html>
+
+
